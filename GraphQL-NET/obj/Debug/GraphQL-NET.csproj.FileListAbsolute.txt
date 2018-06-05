@@ -1,0 +1,10 @@
+c:\users\kiflay teweldebrhane\source\repos\GraphQL-NET\GraphQL-NET\bin\Debug\GraphQL-NET.exe.config
+c:\users\kiflay teweldebrhane\source\repos\GraphQL-NET\GraphQL-NET\bin\Debug\GraphQL-NET.exe
+c:\users\kiflay teweldebrhane\source\repos\GraphQL-NET\GraphQL-NET\bin\Debug\GraphQL-NET.pdb
+c:\users\kiflay teweldebrhane\source\repos\GraphQL-NET\GraphQL-NET\bin\Debug\Newtonsoft.Json.dll
+c:\users\kiflay teweldebrhane\source\repos\GraphQL-NET\GraphQL-NET\bin\Debug\Newtonsoft.Json.xml
+c:\users\kiflay teweldebrhane\source\repos\GraphQL-NET\GraphQL-NET\obj\Debug\GraphQL-NET.csprojAssemblyReference.cache
+c:\users\kiflay teweldebrhane\source\repos\GraphQL-NET\GraphQL-NET\obj\Debug\GraphQL-NET.csproj.CoreCompileInputs.cache
+c:\users\kiflay teweldebrhane\source\repos\GraphQL-NET\GraphQL-NET\obj\Debug\GraphQL-NET.csproj.CopyComplete
+c:\users\kiflay teweldebrhane\source\repos\GraphQL-NET\GraphQL-NET\obj\Debug\GraphQL-NET.exe
+c:\users\kiflay teweldebrhane\source\repos\GraphQL-NET\GraphQL-NET\obj\Debug\GraphQL-NET.pdb
