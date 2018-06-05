@@ -1,4 +1,4 @@
-# GraphQL-C--Client
+# GraphQL-NET-Client
 C#/.NET client for Shopify GraphQL Admin API
 
 .NET GraphQL client for Shopify GraphQL Admin API. A user will need
