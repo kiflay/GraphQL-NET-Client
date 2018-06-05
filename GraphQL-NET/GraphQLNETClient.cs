@@ -15,14 +15,16 @@ namespace GraphQL_NET
         public object Execute(string path,string query)
         {
             
-            var auth                      = System.Text.Encoding.UTF8.GetBytes("f30e4f25cc673e06e3b4f05ae8bf4b80" + ":" + "6bf5f6d74a09469c4c1ffb7f4ec53ff4");
+             // For Athunetication create private app
+            // Once you create private App Use the API Key and password within the private App
+
+            var auth                      = System.Text.Encoding.UTF8.GetBytes("<API Key>" + ":" + "<Password>");
             string auth64                 = Convert.ToBase64String(auth);
             HttpWebRequest request        = (HttpWebRequest)WebRequest.Create(path);
             request.ContentType           = "application/graphql";
             request.Method                = "POST";
 
-          //  request.Headers.Add("Authorization", "Basic " + auth64);
-            request.Headers.Add("X-Shopify-Access-Token", "6bf5f6d74a09469c4c1ffb7f4ec53ff4");
+            request.Headers.Add("Authorization", "Basic " + auth64);
 
             if (query != null)
             {
