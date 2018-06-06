@@ -14,8 +14,7 @@ namespace GraphQL_NET
     {
         public object Execute(string path,string query)
         {
-            
-             // For Athunetication create private app
+            // For Athunetication create private app
             // Once you create private App Use the API Key and password within the private App
 
             var auth                      = System.Text.Encoding.UTF8.GetBytes("<API Key>" + ":" + "<Password>");
@@ -25,7 +24,7 @@ namespace GraphQL_NET
             request.Method                = "POST";
 
             request.Headers.Add("Authorization", "Basic " + auth64);
-
+            
             if (query != null)
             {
              
@@ -42,20 +41,44 @@ namespace GraphQL_NET
                     }
             }
 
-            var response = (HttpWebResponse)request.GetResponse();
-
-            string result = null;
-            using (Stream stream = response.GetResponseStream())
+            string result         = null;
+            string errorMessage   = null;
+            try
             {
-                StreamReader reader = new StreamReader(stream);
-                result = reader.ReadToEnd();
-                reader.Close();
+                var response = (HttpWebResponse)request.GetResponse();
+
+                using (Stream stream = response.GetResponseStream())
+                {
+                    StreamReader reader = new StreamReader(stream);
+                    result = reader.ReadToEnd();
+                    reader.Close();
+                }
+
+               
+
+            }catch(WebException ex)
+            {
+                // Any non 200 status code server errors
+                using (var stream = ex.Response.GetResponseStream())
+                {
+                    using (var reader = new StreamReader(stream))
+                    {
+                        
+                        errorMessage = reader.ReadToEnd();
+                    }
+                }
+
+
+            }catch( Exception ex)
+            {
+                // Some general error like server was never reached
+                errorMessage = ex.Message;
             }
 
             if (string.IsNullOrWhiteSpace(result))
-                return null;
+                return JsonConvert.DeserializeObject(errorMessage);
 
-          return JsonConvert.DeserializeObject(result);
+            return JsonConvert.DeserializeObject(result);
 
             
         }

@@ -11,8 +11,8 @@ namespace GraphQL_NET
         static void Main(string[] args)
         {
             var GraphQl       = new GraphQLNETClient();
-            string url        = "<Base URL>/admin/api/graphql.json";
-            string query      = "{shop { products(first: 5) {edges {node { id handle }}}}}";
+            string url        = "<Base Url>/admin/api/graphql.json";
+            string query      = @"{shop { products(first: 5) {edges {node { id handle }}}}}";
             var jSonResponse  = GraphQl.Execute(url,query);
 
             Console.WriteLine(jSonResponse);
